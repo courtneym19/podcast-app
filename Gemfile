@@ -10,6 +10,9 @@ gem 'devise'
 gem 'angular-rails-templates' #=> allows us to place our html views in the assets/javascripts directory
 gem 'active_model_serializers'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails'
+gem 'ionicons-rails'
+gem "font-ionicons-rails"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

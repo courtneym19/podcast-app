@@ -1,0 +1,67 @@
+<body>
+  <div class="home-header">
+    <div class="home-title">
+      <h1>Soul Spectrum Podcast</h1>
+    </div>
+    <div id="home-nav">
+      <h3 ng-if="user">Welcome, {{user.username}}!</h3>
+      <a href="">Home</a>
+      <a href="">iTunes</a>
+      <a href="">About</a>
+    </div>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <p id="blog-header">Updates</p>
+        </div>
+        <div class="col-md-5">
+          <p class="sidebar-header">Receive Email Updates</p>
+          <form action="//facebook.us16.list-manage.com/subscribe/post?u=1a79d6d6eca2db7827419e472&amp;id=6aac485fea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <input type="email" id="email-field" placeholder="Enter your email address here..." required>
+            <input type="submit" id="email-submit" value="Submit">
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7" id="blog-content">
+          <!-- blog content here -->
+        </div>
+        <div class="col-md-5">
+          <p class="sidebar-header">Episodes</p>
+          <div class="row">
+            <input type="text" class="form-control" id="search" ng-model="search" placeholder="Type search phrase here..." />
+              <div ng-repeat="episode in episodes | filter : search">
+                <div class="episode-container">
+                  <div class="row">
+                    <div class="pull-left" id="logo">
+                      <img src="https://preview.ibb.co/n61Me5/4aa0fed47e216c10752bc3aa15c44b6e.jpg" border="0" id="player-logo" alt="Lua Jaksik art">
+                    </div>
+                    <div class="col" id="episode-info">
+                      {{episode.title}} | Ep. #{{episode.number}} | {{episode.date}} <br> {{episode.description}}
+                    </div>
+                    <div class="pull-right">
+                      <a class="ion-share" id="player-share" href="";></a>
+                    </div>
+                  </div>
+                  <div class="row" id="player-controls">
+                    <a class="previous" ng-click="EpisodePlayer.previous()">
+                       <span class="ion-skip-backward"></span>
+                   </a>
+                    <a class="player-buttons" style="display:inline" ng-show="!episode.playing" ng-click="EpisodePlayer.play(episode)"><span class="ion-play"></span></a>
+                    <a class="player-buttons" style="display:inline" ng-show="episode.playing" ng-click="EpisodePlayer.pause(episode)"><span class="ion-pause"></span></a>
+                    <a class="next" ng-click="EpisodePlayer.next()">
+                        <span class="ion-skip-forward"></span>
+                    </a>
+                    <seek-bar style="display:inline" value="{{ playerBar.EpisodePlayer.currentTime }}" max="{{ playerBar.EpisodePlayer.currentEpisode.duration }}" on-change="playerBar.EpisodePlayer.setCurrentTime(value)"></seek-bar>
+                    <div class="current-time" style="display:inline">{{ playerBar.EpisodePlayer.currentTime | timecode }}</div>
+                    <div class="total-time" style="display:inline">{{ playerBar.EpisodePlayer.currentEpisode.duration | timecode }}</div>
+                    <span class="ion-android-volume-down" style="display:inline"></span>
+                    <seek-bar value="{{ EpisodePlayer.volume }}" max="{{ 100 }}" on-change="EpisodePlayer.setVolume(value)" ng-style="fillStyle()"></seek-bar>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </main>
+  </div>
+</body>

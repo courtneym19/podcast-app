@@ -60,6 +60,7 @@ app.factory('EpisodePlayer', ['Episode', '$rootScope', function(Episode, $rootSc
 
      EpisodePlayer.play = function(episode) {
           episode = episode || EpisodePlayer.currentEpisode;
+          console.log(episode.audioUrl);
           if (EpisodePlayer.currentEpisode !== episode) {
               setEpisode(episode);
               playEpisode(episode);

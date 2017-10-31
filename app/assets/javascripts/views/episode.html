@@ -1,0 +1,46 @@
+<div class="episode-main">
+  <div class="episode-header">
+    <h1>{{episode.number}} | {{episode.title}}</h1>
+    <h5>{{episode.date}}</h5>
+    <img src="">
+  </div>
+  <div class="audio-player">
+    <div class"player-controls">
+      <a class="previous" ng-click="EpisodePlayer.previous()">
+         <span class="ion-skip-backward"></span>
+     </a>
+      <a class="player-buttons" style="display:inline" ng-show="!episode.playing" ng-click="EpisodePlayer.play(episode)"><span class="ion-play"></span></a>
+      <a class="player-buttons" style="display:inline" ng-show="episode.playing" ng-click="EpisodePlayer.pause(episode)"><span class="ion-pause"></span></a>
+      <a class="next" ng-click="EpisodePlayer.next()">
+          <span class="ion-skip-forward"></span>
+      </a>
+      <seek-bar style="display:inline" value="{{ playerBar.EpisodePlayer.currentTime }}" max="{{ playerBar.EpisodePlayer.currentEpisode.duration }}" on-change="playerBar.EpisodePlayer.setCurrentTime(value)"></seek-bar>
+      <div class="current-time" style="display:inline">{{ playerBar.EpisodePlayer.currentTime | timecode }}</div>
+      <div class="total-time" style="display:inline">{{ playerBar.EpisodePlayer.currentEpisode.duration | timecode }}</div>
+      <span class="ion-android-volume-down" style="display:inline"></span>
+      <seek-bar value="{{ EpisodePlayer.volume }}" max="{{ 100 }}" on-change="EpisodePlayer.setVolume(value)" ng-style="fillStyle()"></seek-bar>
+    </div>
+  </div>
+  <h3>{{episode.description}}</h3>
+  <div id="disqus_thread"></div>
+  <script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+    var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://soulspectrumpodcast.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+  </script>
+</div>

@@ -23,8 +23,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-7" id="blog-content">
-          <!-- blog content here -->
+        <div class="col-md-7" id="blog-content" ng-repeat="post in posts">
+          <a href={{post.postUrl}}><h1>{{post.title}}</h1></a>
+          <h5>By {{post.author}} | {{post.date}}</h5>
+          <a href={{post.postUrl}}><img src={{post.imgUrl}} alt={{post.imgAlt}} class="post-image"></a>
+          <div class="post-snippet">
+            <h5>{{post.snippet}}...<a href={{post.postUrl}}>[Read more]</a></h5>
+          </div>
         </div>
         <div class="col-md-5">
           <p class="sidebar-header">Episodes</p>
@@ -34,10 +39,11 @@
                 <div class="episode-container">
                   <div class="row">
                     <div class="pull-left" id="logo">
-                      <img src="https://preview.ibb.co/n61Me5/4aa0fed47e216c10752bc3aa15c44b6e.jpg" border="0" id="player-logo" alt="Lua Jaksik art">
+                      <a href={{episode.postUrl}}><img src={{episode.imgUrl}} border="0" id="player-logo" alt={{episode.imgAlt}}></a>
                     </div>
                     <div class="col" id="episode-info">
-                      {{episode.title}} | Ep. #{{episode.number}} | {{episode.date}} <br> {{episode.description}}
+                      <a href={{episode.postUrl}}>{{episode.title}} | Ep. #{{episode.number}} | {{episode.date}}</a>
+                      <br> {{episode.description}}
                     </div>
                     <div class="pull-right">
                       <a class="ion-share" id="player-share" href="";></a>

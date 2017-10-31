@@ -12,7 +12,11 @@ app.factory('Post', ['Episode', function(Episode){
     },
   ];
 
-
+  // Post.getPostUrl = function(){
+  //   for (var i = 0; i < posts.length; i++){
+  //     posts[i].postUrl = "/post" + posts[i].number;
+  //   }
+  // };
 
 
   Post.getPosts = function(){

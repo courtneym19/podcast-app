@@ -16,7 +16,8 @@ app.factory('EpisodePlayer', ['Episode', '$rootScope', function(Episode, $rootSc
       }
       currentBuzzObject = new buzz.sound(episode.audioUrl, {
           formats: ['mp3'],
-          preload: true
+          preload: true,
+          crossOrigin: true
       });
 
       currentBuzzObject.bind('timeupdate', function() {

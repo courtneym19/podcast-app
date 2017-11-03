@@ -1,10 +1,7 @@
-var app = angular.module('podcastApp');
+angular
+  .module('podcastApp')
+  .controller('EpisodeCtrl', function($scope, $http, Auth, EpisodePlayer, Episode){
+    $scope.EpisodePlayer = EpisodePlayer;
+    $scope.episodes = Episode.getEpisodes();
 
-app.controller('EpisodeCtrl', ['$scope', '$http', 'EpisodePlayer', 'Episode',
-  function($scope, $http, EpisodePlayer, Episode) {
-  $scope.EpisodePlayer = EpisodePlayer;
-
-  $scope.episodes = Episode.getEpisodes();
-
-
-}]);
+  })

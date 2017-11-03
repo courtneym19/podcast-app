@@ -1,28 +1,28 @@
-var app = angular.module('podcastApp');
+angular
+  .module('podcastApp')
+  .filter('timecode', function(){
+    var timecode = {};
 
-app.filter('timecode', function(){
-  var timecode = {};
+    return function(seconds) {
+        var seconds = Number.parseFloat(seconds);
 
-  return function(seconds) {
-      var seconds = Number.parseFloat(seconds);
+        if (Number.isNaN(seconds)) {
+           return '-:--';
+        }
 
-      if (Number.isNaN(seconds)) {
-         return '-:--';
-      }
+        var wholeSeconds = Math.floor(seconds);
+        var minutes = Math.floor(wholeSeconds / 60);
+        var remainingSeconds = wholeSeconds % 60;
 
-      var wholeSeconds = Math.floor(seconds);
-      var minutes = Math.floor(wholeSeconds / 60);
-      var remainingSeconds = wholeSeconds % 60;
+        var output = minutes + ':';
 
-      var output = minutes + ':';
+        if (remainingSeconds < 10) {
+            output += '0';
+        }
 
-      if (remainingSeconds < 10) {
-          output += '0';
-      }
+        output += remainingSeconds;
+        return output;
+    };
 
-      output += remainingSeconds;
-      return output;
-  };
-
-  return timecode;
+    return timecode;
 })

@@ -1,9 +1,9 @@
-var app = angular.module('podcastApp');
+angular
+  .module('podcastApp')
+  .factory('User', function(){
+    var User = {};
 
-app.factory('User', [ function(){
-  var User = {};
+    //
 
-  //
-
-  return User;
-}]);
+    return User;
+  });

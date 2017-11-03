@@ -1,6 +1,6 @@
 angular
   .module('podcastApp')
-  .config(function($stateProvider, $urlRouterProvider){
+  .config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('home', {
         url: '/home',
@@ -33,4 +33,4 @@ angular
         controller: 'EpisodeCtrl'
       })
     $urlRouterProvider.otherwise('/home')
-  })
+  }])

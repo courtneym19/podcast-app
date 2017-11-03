@@ -1,6 +1,6 @@
 angular
   .module('podcastApp')
-  .filter('timecode', function(){
+  .filter('timecode', [ function(){
     var timecode = {};
 
     return function(seconds) {
@@ -25,4 +25,4 @@ angular
     };
 
     return timecode;
-})
+}])

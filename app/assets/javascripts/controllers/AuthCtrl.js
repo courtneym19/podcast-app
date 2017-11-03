@@ -1,6 +1,6 @@
 angular
   .module('podcastApp')
-  .controller('AuthCtrl', function($scope, User, Auth, $state){
+  .controller('AuthCtrl', ["$scope", "User", "Auth", "$state", function($scope, User, Auth, $state){
     var config = {headers: {'X-HTTP-Method-Override': 'POST'}}
 
     $scope.User = User;
@@ -22,4 +22,4 @@ angular
         alert(response.data.error)
       });
     }
-  })
+  }])

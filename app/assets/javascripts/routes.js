@@ -27,10 +27,10 @@ angular
           })
         }
       })
-      .state('episode', {
-        url: '',
-        templateUrl: '',
-        controller: 'EpisodeCtrl'
-      })
+      // .state('episode', {
+      //   url: '',
+      //   templateUrl: '',
+      //   controller: 'EpisodeCtrl'
+      // })
     $urlRouterProvider.otherwise('/home')
   })

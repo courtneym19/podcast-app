@@ -1,6 +1,6 @@
 angular
   .module('podcastApp')
-  .factory('EpisodePlayer', function(Episode, $rootScope){
+  .factory('EpisodePlayer', ["Episode", "$rootScope", function(Episode, $rootScope){
      var EpisodePlayer = {};
 
      var currentBuzzObject = null;
@@ -144,4 +144,4 @@ angular
 
 
      return EpisodePlayer;
-   });
+   }]);

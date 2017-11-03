@@ -1,6 +1,6 @@
 angular
   .module('podcastApp')
-  .factory('Episode', function(){
+  .factory('Episode', [ function(){
     var Episode = {};
 
     var episodes = [
@@ -14,7 +14,7 @@ angular
     }
 
     return Episode;
-  });
+  }]);
 
 
 // { title: '', number: '', date: '', description: '', imgUrl: '', imgAlt: '', postUrl: '', audioUrl: ''},

@@ -9,7 +9,17 @@
   </head>
 
   <body ng-app="podcastApp">
-    <ui-view></ui-view>
+    <div class="home-header">
+      <div class="home-title">
+        <h1>Soul Spectrum Podcast</h1>
+      </div>
+      <div id="home-nav">
+        <a href="">Home</a>
+        <a href="">iTunes</a>
+        <a href="">About</a>
+      </div>
+      <ui-view></ui-view>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.10/buzz.min.js"></script>
   </body>
 </html>

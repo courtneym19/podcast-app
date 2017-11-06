@@ -7,6 +7,10 @@ angular
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
+      .state('about', {
+        url: '/about',
+        templateUrl: 'views/about.html'
+      })
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',

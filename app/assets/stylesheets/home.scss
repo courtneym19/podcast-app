@@ -70,6 +70,28 @@ body {
   border: 1px solid lightgrey;
 }
 
+#mc_embed_signup {
+    background: #f8f8f8;
+    color: #000000;
+    padding: 10px;
+        text-align: center;
+}
+
+#mc_embed_signup .mc-field-group {
+    padding: 10px 0;
+}
+
+/* Styles the input boxes */
+#mc_embed_signup  input {
+    width: 200px;
+}
+
+#mc_embed_signup .button {
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0 auto;
+}
+
 input::placeholder{
   color: #969696;
 }

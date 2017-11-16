@@ -1,11 +1,28 @@
 (function() {
   function Post($firebaseArray) {
+    var posts = {};
+
     var ref = firebase.database().ref().child("posts");
     var posts = $firebaseArray(ref);
+    Post.all = posts;
 
-    return {
-      all: posts
+    Post.wordLimit = function(body){
+      var limit = null;
+      if (body.length <= 275){
+        limit = body.length;
+      }
+      else{
+        for (var i = 276; i < 300; i++){
+          if (/ $/.test(body[i])){
+            limit = i;
+          }
+        }
+      }
+
+      return limit;
     }
+
+    return Post;
   }
 
   angular

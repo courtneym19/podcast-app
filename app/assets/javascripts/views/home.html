@@ -41,7 +41,7 @@
           <h5>By {{post.author}} | {{post.date}}</h5>
           <a href={{post.postUrl}}><img src={{post.imgUrl}} alt={{post.imgAlt}} class="post-image"></a>
           <div class="post-snippet">
-            <h5>{{post.snippet}}...<a href={{post.postUrl}}>[Read more]</a></h5>
+            <h5>{{post.body | limitTo: Post.wordLimit(post.body)}}...<a href={{post.postUrl}}>[Read more]</a></h5>
           </div>
         </div>
         <div class="col-md-5">

@@ -4,6 +4,10 @@ angular
     $scope.EpisodePlayer = EpisodePlayer;
     $scope.episodes = Episode.getEpisodes();
 
+    $scope.Post = Post;
     $scope.posts = Post.all;
+
+
+
 
   }])

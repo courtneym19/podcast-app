@@ -1,6 +1,6 @@
 angular
   .module('podcastApp')
-  .config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider){
+  .config(["$stateProvider", "$routeProvider", "$urlRouterProvider", function($stateProvider, $routeProvider, $urlRouterProvider){
     $stateProvider
       .state('home', {
         url: '/home',

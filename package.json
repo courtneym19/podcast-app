@@ -1,7 +1,0 @@
-{
-  "name": "podcast-app",
-  "private": true,
-  "dependencies": {
-    "ionicons": "^3.0.0"
-  }
-}

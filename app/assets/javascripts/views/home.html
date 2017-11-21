@@ -26,7 +26,7 @@
         <h5>By {{post.author}} | {{post.date}}</h5>
         <a href={{post.postUrl}}><img src={{post.imgUrl}} alt={{post.imgAlt}} class="post-image"></a>
         <div class="post-snippet">
-          <h5>{{post.body | limitTo: Post.wordLimit(post.body)}}...<a href={{post.postUrl}} ng-show="{{post.body.length > 275}}">[Read more]</a></h5>
+          <h5>{{post.body | limitTo: Post.wordLimit(post.body)}}...<a href={{post.postUrl}} ng-show="{{post.body.length > 275}}">[Read More]</a></h5>
         </div>
       </div>
       <!-- Begin MailChimp Signup Form -->
@@ -47,12 +47,12 @@
           </form>
         </div>
         <p class="sidebar-header">Episodes</p>
-        <input type="text" class="form-control" id="search" ng-model="search" placeholder="Type search phrase here..." />
+        <input type="text" class="form-control" id="episode-search" ng-model="search" placeholder="Type search phrase here..." />
           <div ng-repeat="episode in episodes | filter : search">
             <div class="episode-container">
               <div class="row no-gutters">
-                <div class="pull-left" id="logo">
-                  <a href={{episode.postUrl}}><img src={{episode.imgUrl}} border="0" id="player-logo" alt={{episode.imgAlt}}></a>
+                <div class="pull-left">
+                  <a href={{episode.postUrl}}><img src={{episode.imgUrl}} border="0" id="player-logo-left" alt={{episode.imgAlt}}></a>
                 </div>
                 <div class="col" id="episode-info">
                   <a href={{episode.postUrl}}>{{episode.title}} | Ep. #{{episode.number}} | {{episode.date}}</a>

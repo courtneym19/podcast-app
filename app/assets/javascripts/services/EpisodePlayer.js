@@ -9,7 +9,6 @@ angular
 
      EpisodePlayer.currentEpisode = null;
 
-
      var setEpisode = function(episode) {
         if (currentBuzzObject) {
             stopEpisode();

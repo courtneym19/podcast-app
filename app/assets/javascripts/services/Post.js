@@ -5,7 +5,7 @@
     var ref = firebase.database().ref().child("posts");
     var posts = $firebaseArray(ref);
     Post.all = posts;
-
+    
     Post.wordLimit = function(body){
       var limit = null;
       if (body.length <= 275){

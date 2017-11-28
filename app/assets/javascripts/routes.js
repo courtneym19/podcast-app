@@ -1,6 +1,6 @@
 angular
   .module('podcastApp')
-  .config(["$stateProvider", "$routeProvider", "$urlRouterProvider", function($stateProvider, $routeProvider, $urlRouterProvider){
+  .config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('home', {
         url: '/home',
@@ -15,30 +15,26 @@ angular
         url: '/archives',
         templateUrl: 'views/archives.html'
       })
-      // .state('login', {
-      //   url: '/login',
-      //   templateUrl: 'views/login.html',
-      //   controller: 'AuthCtrl',
-      //   onEnter: function(Auth, $state){
-      //     Auth.currentUser().then(function(){
-      //       $state.go('home')
-      //     })
-      //   }
-      // })
-      // .state('register', {
-      //   url: '/register',
-      //   templateUrl: 'views/register.html',
-      //   controller: 'AuthCtrl',
-      //   onEnter: function(Auth, $state){
-      //     Auth.currentUser().then(function(){
-      //       $state.go('home')
-      //     })
-      //   }
-      // })
-      // .state('episode', {
-      //   url: '',
-      //   templateUrl: '',
-      //   controller: 'EpisodeCtrl'
-      // })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'views/login.html',
+        controller: 'AuthCtrl',
+        onEnter: function(Auth, $state){
+          Auth.currentUser().then(function(){
+            $state.go('home')
+          })
+        }
+      })
+      .state('register', {
+        url: '/register',
+        templateUrl: 'views/register.html',
+        controller: 'AuthCtrl',
+        onEnter: function(Auth, $state){
+          Auth.currentUser().then(function(){
+            $state.go('home')
+          })
+        }
+      })
+
     $urlRouterProvider.otherwise('/home')
   }])

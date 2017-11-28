@@ -10,8 +10,10 @@
 
   <body ng-app="podcastApp">
     <div class="home-header">
+      <nav-bar></nav-bar>
       <div class="home-title">
         <h1>Soul Spectrum Podcast</h1>
+
       </div>
       <div id="home-nav">
         <a ui-sref="home">Home</a>
@@ -36,7 +38,7 @@
       };
       firebase.initializeApp(config);
     </script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.10/buzz.min.js"></script>
   </body>
 </html>

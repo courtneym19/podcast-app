@@ -1,4 +1,4 @@
 (function(){
   angular
-    .module('podcastApp', ['ui.router', 'Devise', 'templates', 'firebase', 'ngRoute'])
+    .module('podcastApp', ['ui.router', 'Devise', 'templates', 'firebase'])
 }())

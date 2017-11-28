@@ -1,0 +1,5 @@
+<div class="login-nav">
+  <a ui-sref="login" ng-hide="signedIn()">Log In</a> | 
+  <a ui-sref="register" ng-hide="signedIn()">Register</a>
+  <a ng-click="logout()" ng-show="signedIn()">Log Out</a>
+</div>

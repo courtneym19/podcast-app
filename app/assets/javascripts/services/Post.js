@@ -2,10 +2,10 @@
   function Post($firebaseArray) {
     var posts = {};
 
-    var ref = firebase.database().ref().child("posts");
-    var posts = $firebaseArray(ref);
+    var postRef = firebase.database().ref().child("posts");
+    var posts = $firebaseArray(postRef);
     Post.all = posts;
-    
+
     Post.wordLimit = function(body){
       var limit = null;
       if (body.length <= 275){

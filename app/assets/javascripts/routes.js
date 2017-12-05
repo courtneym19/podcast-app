@@ -19,22 +19,20 @@ angular
         url: '/login',
         templateUrl: 'views/login.html',
         controller: 'AuthCtrl',
-        onEnter: function(Auth, $state){
-          Auth.currentUser().then(function(){
-            $state.go('home')
-          })
-        }
-      })
+        // onEnter: function(Auth, $state){
+        //   Auth.currentUser().then(function(){
+        //     $state.go('home')
+        //   })
+        })
       .state('register', {
         url: '/register',
         templateUrl: 'views/register.html',
         controller: 'AuthCtrl',
-        onEnter: function(Auth, $state){
-          Auth.currentUser().then(function(){
-            $state.go('home')
-          })
-        }
-      })
+        // onEnter: function(Auth, $state){
+        //   Auth.currentUser().then(function(){
+        //     $state.go('home')
+        //   })
+        })
 
     $urlRouterProvider.otherwise('/home')
   }])

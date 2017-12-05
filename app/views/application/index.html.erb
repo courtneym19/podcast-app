@@ -10,22 +10,25 @@
 
   <body ng-app="podcastApp">
     <div class="home-header">
-      <nav-bar></nav-bar>
+      <div class="login-nav">
+        <a ui-sref="login" ng-hide="signedIn()">Log In</a> |
+        <a ui-sref="register" ng-hide="signedIn()">Register</a>
+        <a ng-click="logout()" ng-show="signedIn()">Log Out</a>
+      </div>
       <div class="home-title">
         <h1>Soul Spectrum Podcast</h1>
-
       </div>
       <div id="home-nav">
         <a ui-sref="home">Home</a>
-        <a href="">iTunes</a>
+        <a ui-sref="">iTunes</a>
         <a ui-sref="archives">Archives</a>
         <a ui-sref="about">About</a>
       </div>
       <ui-view></ui-view>
     </div>
-    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-
     <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <script src="https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js"></script>
     <script>
       // Initialize Firebase
       var config = {

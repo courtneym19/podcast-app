@@ -1,25 +1,24 @@
 angular
   .module('podcastApp')
-  .controller('AuthCtrl', function($scope, $rootScope, Auth, $state){
+  .controller('AuthCtrl', ['$scope', '$firebaseAuth', function($scope, $firebaseAuth){
     var config = {headers: {'X-HTTP-Method-Override': 'POST'}}
 
-    $scope.register = function(){
-      Auth.register($scope.user, config).then(function(user){
-        $rootScope.user = user
-        alert("Thanks for signing up, " + user.username);
-        $state.go('home');
-      }, function(response){
-        alert(response.data.error)
-      });
-    };
+    var loginObj = firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+      console.log(error);
+    });
+    $scope.SignIn = function(event) {
+      event.preventDefault();
+      var username = $scope.user.email;
+      var password = $scope.user.password;
 
-    $scope.login = function(){
-      Auth.login($scope.user, config).then(function(user){
-        $rootScope.user = user
-        alert("You're all signed in, " + user.username);
-        $state.go('home');
-      }, function(response){
-        alert(response.data.error)
+      loginObj.$login('password', {
+        email: username,
+        password: password
+      })
+      .then(function(user) {
+        console.log('Authentication successful');
+      }, function(error) {
+        console.log('Authentication failure');
       });
     }
-  })
+  }])
